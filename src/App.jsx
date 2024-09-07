@@ -8,6 +8,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectAuthIsRefreshing } from "./redux/auth/selectors";
 import { useEffect } from "react";
 import { apiIsRefreshing } from "./redux/auth/operation";
+import { RestrictedRoute } from "./components/RestrictedRoute";
+import { PrivateRoute } from "./components/PrivateRoute";
 // import { lazy } from "react";
 
 // const MyComponent = lazy(() => import("path/to/MyComponent"));
@@ -35,9 +37,18 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<HomePage />}></Route>
-          <Route path="/register" element={<RegistrationPage />}></Route>
-          <Route path="/login" element={<LoginPage />}></Route>
-          <Route path="/contacts" element={<ContactsPage />}></Route>
+          <Route
+            path="/register"
+            element={<RestrictedRoute component={<RegistrationPage />} />}
+          ></Route>
+          <Route
+            path="/login"
+            element={<RestrictedRoute component={<LoginPage />} />}
+          ></Route>
+          <Route
+            path="/contacts"
+            element={<PrivateRoute component={<ContactsPage />} />}
+          />
         </Routes>
       </main>
     </>

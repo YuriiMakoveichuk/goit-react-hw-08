@@ -2,13 +2,20 @@ import { NavLink } from "react-router-dom";
 
 import css from "./Navigation.module.css";
 import clsx from "clsx";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   selectAuthIsLoggedIn,
   selectAuthUser,
 } from "../../redux/auth/selectors";
+import { apiLogout } from "../../redux/auth/operation";
 
 const Navigation = () => {
+  const dispatch = useDispatch();
+
+  const onLogout = () => {
+    dispatch(apiLogout());
+  };
+
   const isLoggedIn = useSelector(selectAuthIsLoggedIn);
   const user = useSelector(selectAuthUser);
 
@@ -36,6 +43,9 @@ const Navigation = () => {
                 <p>Hello {user.name}</p>
                 <p>Email: {user.email}</p>
               </div>
+              <button type="button" onClick={onLogout}>
+                Logout
+              </button>
             </>
           ) : (
             <>
