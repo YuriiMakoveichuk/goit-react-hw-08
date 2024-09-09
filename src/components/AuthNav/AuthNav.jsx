@@ -5,7 +5,7 @@ import css from "../AppBar/AppBar.module.css";
 
 const AuthNav = () => {
   return (
-    <>
+    <div style={{ display: "flex", justifyContent: "flex-end", width: "100%" }}>
       <NavLink
         className={({ isActive }) => clsx(css.link, isActive && css.active)}
         to="/login"
@@ -18,7 +18,7 @@ const AuthNav = () => {
       >
         Register
       </NavLink>
-    </>
+    </div>
   );
 };
 
