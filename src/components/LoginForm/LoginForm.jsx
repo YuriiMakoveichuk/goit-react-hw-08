@@ -55,6 +55,7 @@ const LoginForm = () => {
               type="text"
               name="email"
               id={emailId}
+              placeholder="gram2@com.com"
             />
             <ErrorMessage className={css.error} name="email" component="span" />
           </label>
@@ -65,6 +66,7 @@ const LoginForm = () => {
               type="text"
               name="password"
               id={passwordId}
+              placeholder="********"
             />
             <ErrorMessage
               className={css.error}

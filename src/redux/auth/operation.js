@@ -65,7 +65,7 @@ export const apiLogout = createAsyncThunk(
   async (_, thunkApi) => {
     try {
       await instance.post("users/logout");
-
+      setAuthHeaders("");
       return;
     } catch (error) {
       return thunkApi.rejectWithValue(error.message);

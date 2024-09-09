@@ -1,0 +1,31 @@
+.box {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.textUser {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.span {
+  font-size: 24px;
+  font-weight: 800;
+  color: blue;
+}
+
+.btn {
+  border: none;
+  border-radius: 8px;
+  padding: 0 12px;
+  transition: all 250ms linear;
+  font-weight: 700;
+}
+
+.btn:hover,
+.btn:focus {
+  color: blue;
+  background-color: bisque;
+}

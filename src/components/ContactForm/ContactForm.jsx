@@ -40,7 +40,13 @@ const ContactForm = () => {
       <Form className={css.form}>
         <label className={css.label} htmlFor={nameId}>
           Name
-          <Field className={css.field} type="text" name="name" id={nameId} />
+          <Field
+            className={css.field}
+            type="text"
+            name="name"
+            id={nameId}
+            placeholder="Alex Pag"
+          />
           <ErrorMessage name="name" component="span" className={css.error} />
         </label>
         <label className={css.label} htmlFor={numberId}>
@@ -50,6 +56,7 @@ const ContactForm = () => {
             type="text"
             name="number"
             id={numberId}
+            placeholder="xxx-xx-xx"
           />
           <ErrorMessage className={css.error} name="number" component="span" />
         </label>

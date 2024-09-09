@@ -56,7 +56,13 @@ const RegistrationForm = () => {
         <Form className={css.form}>
           <label className={css.label} htmlFor={nameId}>
             Name
-            <Field className={css.field} type="text" name="name" id={nameId} />
+            <Field
+              className={css.field}
+              type="text"
+              name="name"
+              id={nameId}
+              placeholder="Alex Pag"
+            />
             <ErrorMessage name="name" component="span" className={css.error} />
           </label>
           <label className={css.label} htmlFor={emailId}>
@@ -66,6 +72,7 @@ const RegistrationForm = () => {
               type="text"
               name="email"
               id={emailId}
+              placeholder="gram2@com.com"
             />
             <ErrorMessage className={css.error} name="email" component="span" />
           </label>
@@ -76,6 +83,7 @@ const RegistrationForm = () => {
               type="text"
               name="password"
               id={passwordId}
+              placeholder="********"
             />
             <ErrorMessage
               className={css.error}

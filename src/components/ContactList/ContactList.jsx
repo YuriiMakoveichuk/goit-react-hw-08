@@ -1,13 +1,15 @@
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import toast from "react-hot-toast";
+
+import { FcOk } from "react-icons/fc";
+
+import { fetchContacts } from "../../redux/contacts/operation";
+import { selectFilteredContacts } from "../../redux/filters/operation";
+
 import Contact from "../Contact/Contact";
 
-// import { selectFilteredContacts } from "../../redux/contacts/selectors";
-import { useDispatch, useSelector } from "react-redux";
-
 import css from "./ContactList.module.css";
-import { selectFilteredContacts } from "../../redux/filters/selection";
-import { useEffect } from "react";
-import { fetchContacts } from "../../redux/contacts/operation";
-import toast from "react-hot-toast";
 
 const ContactList = () => {
   const dispatch = useDispatch();
@@ -24,7 +26,11 @@ const ContactList = () => {
 
   return (
     <ul className={css.contactList}>
-      {contacts?.length === 0 && <li>Your contacts list is empty</li>}
+      {contacts?.length === 0 && (
+        <p className={css.text}>
+          Your contacts list is empty <FcOk />
+        </p>
+      )}
       {Array.isArray(contacts) &&
         contacts.map((contact) => {
           return (
