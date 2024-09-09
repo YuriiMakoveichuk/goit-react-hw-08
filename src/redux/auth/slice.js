@@ -69,8 +69,16 @@ const authSlice = createSlice({
       })
 
       .addCase(apiLogout.pending, handlePending)
-      .addCase(apiLogout.fulfilled, () => {
-        return INITIAL_STATE;
+      .addCase(apiLogout.fulfilled, (state) => {
+        state.user = {
+          name: null,
+          email: null,
+        };
+        state.token = null;
+        state.isLoggedIn = false;
+        state.isRefreshing = false;
+        state.loading = false;
+        state.error = null;
       })
       .addCase(apiLogout.rejected, handleRejected);
   },
