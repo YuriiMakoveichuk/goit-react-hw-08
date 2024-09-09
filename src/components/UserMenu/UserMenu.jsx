@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { apiLogout } from "../../redux/auth/operation";
+import { apiLogout } from "../../redux/auth/operations";
 import { selectAuthUser } from "../../redux/auth/selectors";
 import { NavLink } from "react-router-dom";
 import clsx from "clsx";

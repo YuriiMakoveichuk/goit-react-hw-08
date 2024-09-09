@@ -4,8 +4,8 @@ import toast from "react-hot-toast";
 
 import { FcOk } from "react-icons/fc";
 
-import { fetchContacts } from "../../redux/contacts/operation";
-import { selectFilteredContacts } from "../../redux/filters/operation";
+import { fetchContacts } from "../../redux/contacts/operations";
+import { selectFilteredContacts } from "../../redux/filters/operations";
 
 import Contact from "../Contact/Contact";
 

@@ -4,10 +4,11 @@ import * as Yup from "yup";
 
 import { useDispatch, useSelector } from "react-redux";
 
-import css from "./LoginForm.module.css";
-import { apiLogin } from "../../redux/auth/operation";
+import { apiLogin } from "../../redux/auth/operations";
 import { selectAuthError, selectAuthLoading } from "../../redux/auth/selectors";
 import Loader from "../Loader/Loader";
+
+import css from "./LoginForm.module.css";
 
 const initialValues = {
   email: "",

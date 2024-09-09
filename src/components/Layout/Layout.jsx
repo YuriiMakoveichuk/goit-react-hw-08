@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { selectAuthIsRefreshing } from "../../redux/auth/selectors";
 import { lazy, Suspense, useEffect } from "react";
-import { apiIsRefreshing } from "../../redux/auth/operation";
+import { apiIsRefreshing } from "../../redux/auth/operations";
 import { PrivateRoute } from "../PrivateRoute";
 import { RestrictedRoute } from "../RestrictedRoute";
 import AppBar from "../AppBar/AppBar";
